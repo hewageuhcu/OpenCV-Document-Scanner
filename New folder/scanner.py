@@ -4,7 +4,7 @@ import utils
 
 ##################################################
 webCamFeed=True
-pathImage=
+pathImage="OIP.jpg"
 cap=cv2.VideoCapture(1)
 cap.set(10,160)
 heightImg=640
