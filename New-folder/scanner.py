@@ -52,5 +52,7 @@ while True:
         matris=cv2.getPerspectiveTransform(pts1,pts2)
         imgWrapColored=cv2.wrapPerspective(img,matrix,(widthImg,heightImg))
         
+        imgWrapColored=imgWrapColored[20:imgWrapColored.shape[0]-20,20:imgWrapColored.shape]
+        imgWrapColored=cv2.resize(imgWrapColored,(widthImg,heighImg))
         
     
