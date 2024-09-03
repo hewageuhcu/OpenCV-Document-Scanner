@@ -42,8 +42,9 @@ while True:
     cv2.drawContours(imgContours,contours,-1,(0,255,0),10)
     
     biggest, maxArea=utlis.biggestContour(contours)
+    print(biggest)
     if biggest.size!=0:
-        biggest=utlis.recorder(biggest)
+        biggest=utlis.reorder(biggest)
         cv2.drawContours(imnBigContour,biggest,-1,(0,255,0),20)
         imgBigContour=utlis.drawRectangle(imgBigContour,biggest,2)
         pts1=np.float32(biggest)
