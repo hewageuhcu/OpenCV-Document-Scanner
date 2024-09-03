@@ -38,4 +38,7 @@ while True:
     # find all contours
     imgContours = img.copy()
     imgBigContour = img.copy()  # Assuming you intended to use this variable; corrected typo
-    contours, hierarchy=cv2.findContours(imgThreshold, cv2.RETE_EXTERNAL, cv2.CHAIN_APPROX_)
+    contours, hierarchy=cv2.findContours(imgThreshold, cv2.RETE_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(imgContours,contours,-1,(0,255,0),10)
+    
+    
