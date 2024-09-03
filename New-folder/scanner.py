@@ -55,4 +55,16 @@ while True:
         imgWrapColored=imgWrapColored[20:imgWrapColored.shape[0]-20,20:imgWrapColored.shape]
         imgWrapColored=cv2.resize(imgWrapColored,(widthImg,heighImg))
         
+        imgWrapGray=cv2.cvtColor(imgWrapColored, cv2.COLOR_BGR2GRAY)
+        imgAdaptiveThre=cv2.adaptiveThreshold(imgWrapGray,255,1,1,7,2)
+        imgAdaptiveThre=cv2.bitwise_not(imgAdaptiveThre)
+        imgAdaptiveThre=cv2.medianBlur(imgAdaptive,3)
+        
+        imgArray=([img,imgGray,imgThreshold,imgContours],
+                  [imgBigContour,imgBlank,imgBlank,imgBlank])
+        
+        lables-=[["Original","Gray","Threshold","Contours"],
+                 ]
+        
+        
     
