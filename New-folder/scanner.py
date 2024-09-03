@@ -41,4 +41,15 @@ while True:
     contours, hierarchy=cv2.findContours(imgThreshold, cv2.RETE_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     cv2.drawContours(imgContours,contours,-1,(0,255,0),10)
     
+    biggest, maxArea=utlis.biggestContour(contours)
+    if biggest.size!=0:
+        biggest=utlis.recorder(biggest)
+        cv2.drawContours(imnBigContour,biggest,-1,(0,255,0),20)
+        imgBigContour=utlis.drawRectangle(imgBigContour,biggest,2)
+        pts1=np.float32(biggest)
+        pts2=np.float32([[0,0],[widthImg,0],[0,heightImg],[widthImg,heightImg]])
+        matris=cv2.getPerspectiveTransform(pts1,pts2)
+        imgWrapColored=cv2.wrapPerspective(img,matrix,(widthImg,heightImg))
+        
+        
     
