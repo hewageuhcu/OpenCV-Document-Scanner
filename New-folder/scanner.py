@@ -64,7 +64,11 @@ while True:
                   [imgBigContour,imgBlank,imgBlank,imgBlank])
         
         lables-=[["Original","Gray","Threshold","Contours"],
-                 ]
+                 ["Biggest Contour","Wrap Perspective","Wrap Grey","Adaptive Threshold"]]
+        
+    stackedImage=utlis.stackImages(imageArray,0.75,lables)
+    cv2.imshow("Result",stackedImage)
+    
         
         
     
